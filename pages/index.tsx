@@ -8,6 +8,8 @@ import MuiBookingTable from '@/components/bookingsTable';
 import { changeDate } from '@/libs/helper';
 import { BookingInfo, BookingProps } from '@/types/types';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import CreateButton from '@/components/createButton';
+import ModalForm from '@/components/ModalForm';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   let Bookings: BookingInfo[] = []
@@ -58,7 +60,9 @@ export default function Home({Bookings}: BookingProps) {
           Welcome to the List of bookings! Here is a table of the current bookings.
         </Typography>
         <Loader show />
+        <CreateButton text={"Create new Booking"}></CreateButton>
         <MuiBookingTable data={Bookings}></MuiBookingTable>
+
       </Box>
     </Container>
   );

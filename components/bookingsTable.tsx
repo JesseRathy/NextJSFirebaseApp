@@ -2,6 +2,9 @@ import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper
 import React from "react";
 import { getHeaders } from "../libs/helper"
 import { BookingInfo } from "@/types/types";
+import UpdateButton from "./updateButton";
+import { PropaneSharp } from "@mui/icons-material";
+import DeleteButton from "./deleteButton";
 
 
 
@@ -48,8 +51,8 @@ export default function MuiBookingTable({ data }: TableProps) {
                         <TableCell>{row.date}</TableCell>
                         <TableCell>{row.totalAmount}</TableCell>
                         <TableCell>
-                            <Button variant="contained">Edit</Button>
-                            <Button variant="contained">Delete</Button>
+                            <UpdateButton row={row} >Edit</UpdateButton>
+                            <DeleteButton row={row}>Delete</DeleteButton>
                         </TableCell>
                     </TableRow>
                     ))}
