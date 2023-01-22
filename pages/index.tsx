@@ -9,7 +9,6 @@ import { changeDate } from '@/libs/helper';
 import { BookingInfo, BookingProps } from '@/types/types';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import CreateButton from '@/components/createButton';
-import ModalForm from '@/components/ModalForm';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   let Bookings: BookingInfo[] = []
@@ -41,11 +40,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 
 
+
+
 export default function Home({Bookings}: BookingProps) {
-  console.log("have fetched");
-  console.log(`Here are the bookings ${Bookings}`);
+  const [isRefreshing, setisRefreshing] = React.useState<boolean>(false)
+  
+  //console.log("have fetched");
+  console.log(`Here are the bookings ${JSON.stringify(Bookings)}`);
+
+
+
 
   return (
+
     <Container maxWidth="lg">
       <Box
         sx={{
@@ -61,7 +68,7 @@ export default function Home({Bookings}: BookingProps) {
         </Typography>
         <Loader show />
         <CreateButton text={"Create new Booking"}></CreateButton>
-        <MuiBookingTable data={Bookings}></MuiBookingTable>
+        <MuiBookingTable data={Bookings} ></MuiBookingTable>
 
       </Box>
     </Container>

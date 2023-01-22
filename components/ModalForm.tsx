@@ -8,6 +8,7 @@ import { propsToClassKey } from "@mui/styles"
 import { Timestamp } from "firebase/firestore"
 import { createNewBooking, updateBooking } from "@/libs/firebase"
 import { BookingInfo } from "@/types/types"
+import {useRouter} from 'next/navigation'
 
 
 type FormProps = {
@@ -20,6 +21,8 @@ export default function ModalForm(props: {open: boolean, handleClose: () => void
     const [giverVal, setGiverVal] = useState<string | null> (props.data == null ? null : props.data.giver)
     const [costVal, setCostVal] = useState<string | null>  (props.data == null ? null : props.data.totalAmount.toString())
     const [typeVal, setTypeVal] = useState<string> (props.data ==null ? "Create" : "Update")
+
+    const router = useRouter()
 
     async function handleSubmit (e: React.SyntheticEvent): Promise<void> {
         e.preventDefault();
@@ -45,7 +48,9 @@ export default function ModalForm(props: {open: boolean, handleClose: () => void
             }
             await updateBooking(updateData)
         }
+        await router.refresh()
         props.handleClose();
+        
 
     }
 

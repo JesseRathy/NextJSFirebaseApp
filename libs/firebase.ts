@@ -65,7 +65,11 @@ const firebaseConfig: firebase.FirebaseOptions = {
  }
 
  export async function deleteBooking(id: string){
+  console.log(`document ${id} is being deleted`);
+  console.log(`deleting foo1`);
     const deleteRef = doc(db,"bookings",id)
-    await deleteDoc(deleteRef);
+    console.log(`deleting foo3`);
+    let delDoc =await deleteDoc(deleteRef);
+    console.log(`deleting foo2 -- ${delDoc}`);
     console.log(`document ${id} has been deleted`);
  }

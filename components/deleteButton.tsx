@@ -3,11 +3,11 @@ import { PropsWithChildren, useState } from "react";
 import ModalForm from "./ModalForm";
 import UpdateModal from "./UpdateModal";
 import { BookingInfo } from "@/types/types";
-import { Props } from "next/script";
 import DeleteModal from "./DeleteModal";
 
 export interface ButtonProps extends PropsWithChildren {
     row: BookingInfo
+    //refresh: () => void
 }
 
 
@@ -15,31 +15,32 @@ export interface ButtonProps extends PropsWithChildren {
 
 export default function DeleteButton({row}:ButtonProps) {
 
-    const [open, setOpen] = useState(false);
+    const [deleteopen, setDeleteOpen] = useState(false);
     
     
-    const handleOpen = () => {
-        setOpen(true);
-        console.log(open);
+    const handleDeleteOpen = () => {
+        setDeleteOpen(true);
+        console.log(`HandleDeleteOpen() --> ${deleteopen}`);
+        console.log(deleteopen);
 
     }
 
-    const handleClose = () => {
-        setOpen(false);
-        console.log(open);
+    const handleDeleteClose = () => {
+        setDeleteOpen(false);
+        console.log(`HandleDeleteClosed() --> ${deleteopen}`);
+        console.log(deleteopen);
     }
 
-    console.log(open)
     return(
         
     <div> 
     <Button 
         variant="contained" 
         color="primary"
-        onClick={handleOpen}>
+        onClick={handleDeleteOpen}>
         Delete
         </Button>
-    <DeleteModal open={open} handleClose={handleClose} id={row.id} ></DeleteModal>
+    <DeleteModal deleteOpen={deleteopen} deleteHandleClose={handleDeleteClose} id={row.id}  ></DeleteModal>
     </div>
    
 

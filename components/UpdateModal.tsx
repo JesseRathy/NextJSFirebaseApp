@@ -7,6 +7,7 @@ interface editModalProps {
  open: boolean,
  handleClose: () => void
  data: BookingInfo | null
+// refresh: () => void
 }
 
 export default function UpdateModal({open,handleClose,data}: editModalProps) {
@@ -18,7 +19,7 @@ export default function UpdateModal({open,handleClose,data}: editModalProps) {
     return(
     
     <Dialog open={open} onClose={handleClose}>
-       <ModalForm open={open} handleClose={handleClose} data={data}></ModalForm>
+       <ModalForm open={open} handleClose={handleClose} data={data} ></ModalForm>
     </Dialog>
   
     )

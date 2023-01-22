@@ -6,6 +6,7 @@ import { BookingInfo } from "@/types/types";
 
 export interface ButtonProps extends PropsWithChildren {
     row: BookingInfo
+    //refresh: () => void
 }
 
 
@@ -18,16 +19,15 @@ export default function UpdateButton({row}:ButtonProps) {
     
     const handleOpen = () => {
         setOpen(true);
-        console.log(open);
+        console.log(`HandleOpen() --> ${open}`);
 
     }
 
     const handleClose = () => {
         setOpen(false);
-        console.log(open);
+        console.log(`HandleClose() --> ${open}`);
     }
 
-    console.log(open)
     return(
         
     <div> 

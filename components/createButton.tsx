@@ -5,6 +5,7 @@ import UpdateModal from "./UpdateModal";
 
 export interface ButtonProps {
     text: string
+    //refresh: () => void
 }
 
 
@@ -25,8 +26,6 @@ export default function CreateButton({text}:ButtonProps) {
         setOpen(false);
         console.log(open);
     }
-
-    console.log(open)
     return(
         
     <div> 
@@ -36,7 +35,7 @@ export default function CreateButton({text}:ButtonProps) {
         onClick={handleOpen}>
         {text}
         </Button>
-    <UpdateModal open={open} handleClose={handleClose} data={null} ></UpdateModal></div>
+    <UpdateModal open={open} handleClose={handleClose} data={null}  ></UpdateModal></div>
    
 
 );
