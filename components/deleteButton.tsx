@@ -1,7 +1,5 @@
 import { Button } from "@mui/material";
-import { PropsWithChildren, useState } from "react";
-import ModalForm from "./ModalForm";
-import UpdateModal from "./UpdateModal";
+import { useState } from "react";
 import { BookingInfo } from "@/types/types";
 import DeleteModal from "./DeleteModal";
 
