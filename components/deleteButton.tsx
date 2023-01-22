@@ -6,14 +6,15 @@ import { BookingInfo } from "@/types/types";
 import DeleteModal from "./DeleteModal";
 
 export interface ButtonProps {
-    row: BookingInfo
+    row: BookingInfo,
+    children: React.ReactNode;
     //refresh: () => void
 }
 
 
 
 
-export default function DeleteButton({row}:ButtonProps) {
+export default function DeleteButton({row,children }:ButtonProps) {
 
     const [deleteopen, setDeleteOpen] = useState(false);
     

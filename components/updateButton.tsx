@@ -5,14 +5,15 @@ import UpdateModal from "./UpdateModal";
 import { BookingInfo } from "@/types/types";
 
 export interface ButtonProps {
-    row: BookingInfo
+    row: BookingInfo,
+    children: React.ReactNode;
     //refresh: () => void
 }
 
 
 
 
-export default function UpdateButton({row}:ButtonProps) {
+export default function UpdateButton({row,children}:ButtonProps) {
 
     const [open, setOpen] = useState(false);
     
