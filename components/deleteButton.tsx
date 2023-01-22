@@ -5,7 +5,7 @@ import UpdateModal from "./UpdateModal";
 import { BookingInfo } from "@/types/types";
 import DeleteModal from "./DeleteModal";
 
-export interface ButtonProps extends PropsWithChildren {
+export interface ButtonProps {
     row: BookingInfo
     //refresh: () => void
 }
