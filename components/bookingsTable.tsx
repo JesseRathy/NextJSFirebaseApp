@@ -2,8 +2,8 @@ import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper
 import React from "react";
 import { getHeaders } from "../libs/helper"
 import { BookingInfo } from "@/types/types";
-import UpdateButton from "./UpdateButton";
-import DeleteButton from "./DeleteButton";
+import UpdateButton from "./updateButton";
+import DeleteButton from "./deleteButton";
 
 
 
