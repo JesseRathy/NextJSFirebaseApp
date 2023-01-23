@@ -18,7 +18,7 @@ export default function MuiBookingTable({ data }: TableProps) {
     console.log(`this is the data: ${JSON.stringify(data)}`)
     // const headers = getHeaders(data);
     return(
-     <TableContainer component={Paper}>
+     <TableContainer  component={Paper}>
             <Table aria-label='table-of-bookings'>
                 <TableHead>
                     <TableRow>

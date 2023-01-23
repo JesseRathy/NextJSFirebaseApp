@@ -66,7 +66,6 @@ export default function Home({Bookings}: BookingProps) {
         <Typography variant="h4" component="h1" gutterBottom>
           Welcome to the List of bookings! Here is a table of the current bookings.
         </Typography>
-        <Loader show />
         <CreateButton text={"Create new Booking"}></CreateButton>
         <MuiBookingTable data={Bookings} ></MuiBookingTable>
 
