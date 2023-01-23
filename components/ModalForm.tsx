@@ -67,7 +67,7 @@ export default function ModalForm(props: {open: boolean, handleClose: () => void
             <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DatePicker label="Booking Date" value={dateVal} renderInput={(params) => <TextField {...params} />} onChange={(newValue) => { setDateVal(newValue) }}></DatePicker>
             </LocalizationProvider>
-            <TextField label="Total Amount" variant="filled" required  value={costVal} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setCostVal(e.target.value)} ></TextField>
+            <TextField label="Total Amount" variant="filled" type="number" required  value={costVal} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setCostVal(e.target.value)} ></TextField>
             <div>
                 <Button variant="contained" color="primary" type="submit">Submit</Button>
                 <Button variant="contained" color="secondary" onClick={props.handleClose}>Cancel</Button>
