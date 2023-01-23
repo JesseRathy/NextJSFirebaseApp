@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material"
+import { Button, InputAdornment, TextField } from "@mui/material"
 import { DatePicker } from "@mui/x-date-pickers"
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns"
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider"
@@ -67,7 +67,12 @@ export default function ModalForm(props: {open: boolean, handleClose: () => void
             <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DatePicker label="Booking Date" value={dateVal} renderInput={(params) => <TextField {...params} />} onChange={(newValue) => { setDateVal(newValue) }}></DatePicker>
             </LocalizationProvider>
-            <TextField label="Total Amount" variant="filled" type="number" required  value={costVal} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setCostVal(e.target.value)} ></TextField>
+            <TextField label="Total Amount" variant="filled" type="number"
+            InputProps={{
+                startAdornment:(
+                    <InputAdornment position="start">$</InputAdornment>
+                )
+            }} required  value={costVal} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setCostVal(e.target.value)} ></TextField>
             <div>
                 <Button variant="contained" color="primary" type="submit">Submit</Button>
                 <Button variant="contained" color="secondary" onClick={props.handleClose}>Cancel</Button>
