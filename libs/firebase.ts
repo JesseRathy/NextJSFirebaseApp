@@ -57,7 +57,7 @@ const firebaseConfig: firebase.FirebaseOptions = {
       seeker: data.seeker,
       giver: data.giver,
       date: data.date,
-      "total amount": data["total amount"]
+      "total amount":  data["total amount"] !== null && isNaN(data["total amount"]) ? 0 : data["total amount"]
     }
    
     const result = await updateDoc(doc(db,"bookings",data.id),updateData)

@@ -25,8 +25,9 @@ export default function ModalForm(props: {open: boolean, handleClose: () => void
 
     async function handleSubmit (e: React.SyntheticEvent): Promise<void> {
         e.preventDefault();
-        let finalDate = dateVal == null ? null : Timestamp.fromDate(dateVal)
-        let finalCost = costVal == null ? null : Number(costVal)
+        let finalDate:Timestamp | null = dateVal == null ? null : Timestamp.fromDate(dateVal)
+        let costCheck:string | null = costVal == null ? null : costVal
+        let finalCost:number = isNaN(Number(costCheck)) ? 0 : Number(costCheck)
         console.log(`Values: ${seekerVal}, ${giverVal}, ${dateVal}, ${costVal}`);
 
         if (typeVal === "Create"){

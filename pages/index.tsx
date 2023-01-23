@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
           seeker: doc.data.seeker,
           giver: doc.data.giver,
           date: changeDate(doc.data.date.toDate()),
-          totalAmount: doc.data["total amount"]
+          totalAmount: isNaN(doc.data["total amount"]) ? 0 : doc.data["total amount"]
         }
         Bookings.push(BookingObject)
       }
